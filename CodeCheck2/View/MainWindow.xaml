@@ -11,7 +11,7 @@
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <TextBox Name="TB_BarcodeInput" Text="" Height="71" TextWrapping="NoWrap" Margin="10,38,130,0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontFamily="Arial" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <Button Name="BTN_Add" Content="添加" Margin="0,38,10,0" VerticalAlignment="Top" Height="71" Click="BTN_Add_CLK" HorizontalAlignment="Right" Width="100" FontSize="21.333" Grid.Column="1"/>
+        <Button Name="BTN_Add" Content="确定" Margin="0,38,10,0" VerticalAlignment="Top" Height="71" Click="BTN_Add_CLK" HorizontalAlignment="Right" Width="100" FontSize="21.333" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,260,0,0" TextWrapping="NoWrap" Text="已录入条码：" VerticalAlignment="Top" Width="100"/>
         <TextBlock Margin="88,255,258,0" TextWrapping="NoWrap" Foreground="SkyBlue" TextAlignment="Left" Text="{Binding ElementName=LIST_Barcode,Path=Items.Count}" VerticalAlignment="Top" Height="25" FontFamily="Arial Black" FontSize="22"/>
         <DataGrid Name="LIST_Barcode" Grid.Column="0" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,282,14,55" AlternatingRowBackground="LightBlue" HorizontalGridLinesBrush="LightBlue" VerticalGridLinesBrush="LightBlue"  >
