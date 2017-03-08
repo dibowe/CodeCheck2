@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiX", "CodeCheck2\MiX.csproj", "{98347964-6C78-4A44-9055-FDAC9FEACECA}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML练习项目", "..\UML练习项目\UML练习项目\UML练习项目.modelproj", "{348A5C26-94D7-4271-8B40-9D8EEB5EDBD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98347964-6C78-4A44-9055-FDAC9FEACECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98347964-6C78-4A44-9055-FDAC9FEACECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98347964-6C78-4A44-9055-FDAC9FEACECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98347964-6C78-4A44-9055-FDAC9FEACECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348A5C26-94D7-4271-8B40-9D8EEB5EDBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348A5C26-94D7-4271-8B40-9D8EEB5EDBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348A5C26-94D7-4271-8B40-9D8EEB5EDBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

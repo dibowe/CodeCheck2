@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="be6a46b8-f901-4007-af46-f8f39d8364ec"
+  name="CodeCheck_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="ac630c23-2609-4ad3-9130-cb7316f8940a"
+        name="CodeCheck活动图"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <opaqueAction
+            Id="6226f957-83bd-4d62-b9cf-bcbeabaf625d"
+            name="启动"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3731fc08-b1d0-4e85-9707-4713c5342555"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="47ca5bd6-6caa-4538-9eb8-ad2ad9601067"
+                  LastKnownName="连接数据库"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="47ca5bd6-6caa-4538-9eb8-ad2ad9601067"
+            name="连接数据库"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="550fe5b4-799f-43f0-96a6-ffbb6ac9200c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8fc59392-a73b-4ee3-a7ba-dc28fa67bdaa"
+                  LastKnownName="输入条码"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8fc59392-a73b-4ee3-a7ba-dc28fa67bdaa"
+            name="输入条码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8824f041-7d4b-4272-b414-583daabf4476"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3619c3d1-0520-40d6-ae68-863fbe57a1b4"
+                  LastKnownName="验证条码"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="3619c3d1-0520-40d6-ae68-863fbe57a1b4"
+            name="验证条码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="910d4097-e689-42fd-99e7-8ecf6fcace0a"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9f8ecb43-9eba-4a9b-a1aa-a9f4dfd545af"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="96d9adb8-a575-434c-9d2a-39a2b31bea6f"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="bf2ad6cb-bcbf-4810-8076-93314901d7df"
+            name="存入数据库"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="23df71f8-a92f-456d-961a-2ea2d3b65f37"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8fc59392-a73b-4ee3-a7ba-dc28fa67bdaa"
+                  LastKnownName="输入条码"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="068efed4-0d4c-4e76-966a-766dfc64910d"
+            name="锁定"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="82966425-5f0a-401f-8f1b-cc25507f4e12"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cd21167d-4da1-4e19-a48b-bf2726a3bd27"
+                  LastKnownName="解除锁定"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cd21167d-4da1-4e19-a48b-bf2726a3bd27"
+            name="解除锁定"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="93571751-375e-487f-9457-c8047ea20818"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8fc59392-a73b-4ee3-a7ba-dc28fa67bdaa"
+                  LastKnownName="输入条码"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="9f8ecb43-9eba-4a9b-a1aa-a9f4dfd545af"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="70565e8c-7fba-496c-9619-748acdde9bb2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="068efed4-0d4c-4e76-966a-766dfc64910d"
+                  LastKnownName="锁定"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="80e1a5c3-95c7-4fd8-8f63-60fb48ae084e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bf2ad6cb-bcbf-4810-8076-93314901d7df"
+                  LastKnownName="存入数据库"
+                  LastKnownLocation="CodeCheck_UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

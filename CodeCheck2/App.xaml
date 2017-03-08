@@ -1,0 +1,9 @@
+﻿<Application x:Class="MiX.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="View/Login.xaml"
+             DispatcherUnhandledException="AppFailure">
+    <Application.Resources>
+        <ResourceDictionary Source="View/MiXDictionary.xaml" />
+    </Application.Resources>
+</Application>
