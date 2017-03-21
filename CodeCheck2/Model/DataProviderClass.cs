@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.OleDb;
 using System.Windows;
 using System.Configuration;
 
@@ -12,14 +13,14 @@ namespace MiX.Model
     public class DataProviderClass
     {
         DataSet someSet;
-        SqlConnection sqlConnection;
-        SqlCommand SelectCmd,InsertCmd;
-        SqlDataAdapter sqlAdapter;
-        SqlConnectionStringBuilder connStrBuld;
+        OleDbConnection oleDbConnection;
+        OleDbCommand SelectCmd,InsertCmd;
+        OleDbDataAdapter oleDbAdapter;
+        OleDbConnectionStringBuilder connStrBuld;
 
         protected DataProviderClass()
         {
-            connStrBuld = new SqlConnectionStringBuilder();
+            connStrBuld = new OleDbConnectionStringBuilder();
             someSet = new DataSet();
         }
 
@@ -28,21 +29,21 @@ namespace MiX.Model
         public bool InitConnection()
         {
             //如果连接对象为空，创建连接并打开
-            if (sqlConnection == null)
+            if (oleDbConnection == null)
             {
                 try
                 {
                     //ConnectionStringsSection connSection = App.DencryptConfig("MiX.exe.Config", "connectionStrings") as ConnectionStringsSection;
                     //MessageBox.Show(connSection.ConnectionStrings[1]);
-                    connStrBuld.DataSource =        ConfigurationManager.ConnectionStrings["ConnStr_Server"].ConnectionString;
-                    connStrBuld.InitialCatalog =    ConfigurationManager.ConnectionStrings["ConnStr_DataBase"].ConnectionString;
-                    connStrBuld.UserID =            ConfigurationManager.ConnectionStrings["ConnStr_UserID"].ConnectionString;
-                    connStrBuld.Password =          ConfigurationManager.ConnectionStrings["ConnStr_Pwd"].ConnectionString; ;
-                    connStrBuld.IntegratedSecurity = false;
-                    connStrBuld.PersistSecurityInfo = false;
+                    //connStrBuld.DataSource =        ConfigurationManager.ConnectionStrings["ConnStr_Server"].ConnectionString;
+                    //connStrBuld.InitialCatalog =    ConfigurationManager.ConnectionStrings["ConnStr_DataBase"].ConnectionString;
+                    //connStrBuld.UserID =            ConfigurationManager.ConnectionStrings["ConnStr_UserID"].ConnectionString;
+                    //connStrBuld.Password =          ConfigurationManager.ConnectionStrings["ConnStr_Pwd"].ConnectionString; ;
+                    //connStrBuld.IntegratedSecurity = false;
+                    //connStrBuld.PersistSecurityInfo = false;
 
-                    sqlConnection = new SqlConnection(connStrBuld.ConnectionString);
-                    sqlConnection.Open();
+                    oleDbConnection = new OleDbConnection(connStrBuld.ConnectionString);
+                    oleDbConnection.Open();
                 }
                 catch(Exception e)
                 {
@@ -76,7 +77,7 @@ namespace MiX.Model
                     sqlCmd = new SqlCommand();
                 }
                 sqlCmd.CommandText = sqlText;
-                sqlCmd.Connection = sqlConnection;
+                sqlCmd.Connection = oleDbConnection;
 
                 return sqlCmd;
             }
@@ -132,15 +133,15 @@ namespace MiX.Model
             }
 
 
-            if (this.sqlAdapter == null)
+            if (this.oleDbAdapter == null)
             {
-                this.sqlAdapter = new SqlDataAdapter();
+                this.oleDbAdapter = new SqlDataAdapter();
             }
             //如果初始化命令对象成功，在InitSqlCommand内部会先检查sql文本的合规性。
-            this.sqlAdapter.SelectCommand = InitSqlCommand(selectSql, this.SelectCmd);
-            if (this.sqlAdapter.SelectCommand != null)
+            this.oleDbAdapter.SelectCommand = InitSqlCommand(selectSql, this.SelectCmd);
+            if (this.oleDbAdapter.SelectCommand != null)
             {
-                this.sqlAdapter.Fill(theTable);
+                this.oleDbAdapter.Fill(theTable);
 
                 return theTable;
             }
@@ -167,11 +168,11 @@ namespace MiX.Model
         public int CloseConnection()
         {
             int _closedState = 9;
-            this.sqlConnection.Close();
-            switch (this.sqlConnection.State)
+            this.oleDbConnection.Close();
+            switch (this.oleDbConnection.State)
             {
                 case ConnectionState.Open:
-                    this.sqlConnection.Close();
+                    this.oleDbConnection.Close();
                     _closedState = 0;
                     break;
                 case ConnectionState.Broken:

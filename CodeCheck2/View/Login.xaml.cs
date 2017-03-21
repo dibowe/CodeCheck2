@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using MiX.Model;
+using MiX.View;
 
 namespace MiX
 {

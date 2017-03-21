@@ -96,12 +96,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AppLogStruct.cs" />
+    <Compile Include="Model\PageInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\PageJBS.xaml.cs">
+      <DependentUpon>PageJBS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="View\Pages\PageCodeCheck.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -114,11 +124,23 @@
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="View\Pages\PageCodeCheck.xaml.cs">
+      <DependentUpon>PageCodeCheck.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\MiXDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\PageJBS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\StartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
